@@ -2,7 +2,7 @@ import Button from "./Button"
 
 function FinishedScreen({ score, dispatch }) {
     function playAgain() {
-        dispatchEvent({ type: "playAgain" })
+        dispatch({ type: "playAgain" })
     }
     return (
         <div>

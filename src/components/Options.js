@@ -1,4 +1,4 @@
-function Options({ incorrect, correct, hasAnswered, dispatch, correctIndex, options, choosedIndex }) {
+function Options({ hasAnswered, dispatch, correctIndex, options, choosedIndex }) {
     return (
         <div className="options">
             {options.map((option, i) => <Option option={option} key={i} index={i} correctIndex={correctIndex} hasAnswered={hasAnswered} dispatch={dispatch} choosedIndex={choosedIndex} />)}

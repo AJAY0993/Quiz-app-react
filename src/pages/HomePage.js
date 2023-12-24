@@ -1,11 +1,11 @@
-import './radio.css'
+// import './radio.css'
 import { useState } from "react"
-import Button from "./Button"
-function Home({ dispatch }) {
-    const [difficulty, setDifficulty] = useState("easy");
-    const [selectCategory, setSelectedCategory] = useState('9');
+import Button from "../components/Button"
+import { Link } from 'react-router-dom';
+function Home() {
+    const [difficulty, setDifficulty] = useState(null);
+    const [selectCategory, setSelectedCategory] = useState('');
     const [numQuestions, setNumQuestions] = useState(10)
-    //https://opentdb.com/api.php?amount=10&category=25&type=multiple
     function onChange(e) {
         setDifficulty(e.target.value)
     }
@@ -18,13 +18,6 @@ function Home({ dispatch }) {
             setNumQuestions(value);
         }
     }
-    function onClickHandler() {
-        dispatch({
-            type: "startGame", payload: {
-                url: `https://opentdb.com/api.php?amount=${numQuestions}&category=${selectCategory}&type=multiple&difficulty=${difficulty}`
-            }
-        })
-    }
     return (<>
         <main className='container'>
             <h1 className='title' value="gk">Quiz</h1>
@@ -32,29 +25,11 @@ function Home({ dispatch }) {
             <input type='number' value={numQuestions} min="5" max="20" onChange={onChangeNumQuestions}></input>
             <h3>Select category</h3>
             <select value={selectCategory} onChange={onChangeCategory}>
-                <option value="9">
+                <option>
                     General knowledge
                 </option>
-                <option value="11">
-                    Entertainment:Film
-                </option>
-                <option value="10">
-                    Entertainment: Books
-                </option>
-                <option value="12">
-                    Entertainment: Music
-                </option>
-                <option value="17">
-                    Science and Nature
-                </option>
-                <option value="18">
-                    Science: Computers
-                </option>
-                <option value="19">
-                    Science: Mathematics
-                </option>
-                <option value="20">
-                    Mythology
+                <option value="animals">
+                    Animals
                 </option>
             </select>
             <div className='difficulty-selection-box'>
@@ -65,7 +40,7 @@ function Home({ dispatch }) {
                     <label>Hard<input className="input red" type="radio" id="medium" name="difficulty" value="hard" checked={difficulty === "hard"} onChange={onChange}></input></label>
                 </div>
             </div>
-            <Button className="btn-ui" onClickHandler={onClickHandler}>Start Game</Button>
+            <Button className="btn-ui"><Link to="/app">Start Game</Link></Button>
         </main>
     </>
     )

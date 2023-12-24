@@ -1,8 +1,11 @@
 function Progress({ numQuestions, questions, currentIndex }) {
     return (
-        <ul className="progress">
-            {questions.map((x, i) => <ProgressBtn num={i} key={i} currentIndex={currentIndex} />)}
-        </ul>
+        <>
+            <ul className="progress big-screen">
+                {questions.map((x, i) => <ProgressBtn num={i} key={i} currentIndex={currentIndex} />)}
+            </ul>
+            <progress className="small-screen" value={currentIndex + 1} max={questions.length}></progress>
+        </>
     )
 }
 

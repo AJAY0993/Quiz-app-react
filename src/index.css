@@ -112,3 +112,26 @@ code {
   margin-top: 1em;
   margin-left: auto;
 }
+
+
+@media(min-width:700px) {
+  .big-screen {
+    display: flex;
+  }
+
+  .small-screen {
+    display: none;
+  }
+}
+
+@media(max-width:699px) {
+  .big-screen {
+    display: none;
+  }
+
+  .small-screen {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+  }
+}
