@@ -29,7 +29,7 @@ function reducer(state, action) {
     case "answered":
       return { ...state, hasAnswered: true, choosedIndex: action.payload.index, score: state.score += action.payload.points }
     case "next":
-      return { ...state, hasAnswered: false, currentIndex: state.currentIndex++, choosedIndex: null }
+      return { ...state, hasAnswered: false, currentIndex: state.currentIndex + 1, choosedIndex: null }
     case "finished":
       return { ...state, quizStatus: "finished", gameState: "finished" }
     case "playAgain":
