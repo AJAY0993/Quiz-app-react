@@ -1,70 +1,47 @@
-# Getting Started with Create React App
+# React Quiz Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This React Quiz Application allows users to take quizzes fetched from an API, track their progress, and see their final scores. It's built using React and utilizes React hooks like `useReducer` for state management.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- Fetches quiz questions from an external API (Open Trivia Database).
+- Displays a loading spinner while fetching questions.
+- Handles errors gracefully if there's an issue with fetching questions.
+- Allows users to answer questions and tracks their progress.
+- Provides a progress bar to indicate the user's progress through the quiz.
+- Upon completion, displays the final score and offers the option to play again.
 
-### `npm start`
+## Components
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Main**: The main component responsible for rendering the quiz interface and managing the quiz state.
+- **Home**: Initial screen to start the quiz, allowing users to begin the quiz by selecting a category and difficulty level.
+- **Error**: Component to display if there's an error fetching questions.
+- **Loader**: Component to display a loading spinner while fetching questions.
+- **ProgressBar**: Component to display the progress of the quiz.
+- **Question**: Component to display individual quiz questions and handle user responses.
+- **FinishedScreen**: Component to display the final score and provide an option to play again.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Usage
 
-### `npm test`
+1. Clone the repository to your local machine.
+2. Navigate to the project directory.
+3. Install dependencies using `npm install`.
+4. Start the development server using `npm start`.
+5. Access the application in your browser at `http://localhost:3000`.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Technologies Used
 
-### `npm run build`
+- React: JavaScript library for building user interfaces.
+- React Hooks: `useReducer` hook for managing complex state logic.
+- HTML/CSS: Markup and styling for the user interface.
+- Open Trivia Database API: External API used for fetching quiz questions.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## What I Learned
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```javascript
+// Utilized `useReducer`  hook for managing complex state logic in React, providing a more organized and efficient way to handle state changes within the application.
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## How to Contribute
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+If you'd like to contribute to this project, feel free to fork the repository and submit a pull request with your changes.
